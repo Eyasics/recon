@@ -1,0 +1,130 @@
+#!/usr/bin/python
+"""
+This file is part of ReCon.
+
+    ReCon is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Foobar is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>."
+"""
+import os
+import json
+
+json_key_label = 'label'  # classification label
+json_key_host = 'host'
+json_key_domain = 'domain'  # top reasonable domain
+json_key_uri = 'uri'
+json_key_method = 'method'
+json_key_post_body = 'post_body'
+json_key_referrer = 'referrer'  #REFERER
+json_key_user_agent = 'user_agent'
+json_key_src_ip = 'src_ip'
+json_key_src_p = 'src_port'
+json_key_dst_ip = 'dst_ip'
+json_key_dst_p = 'dst_port'
+json_key_package_name = 'package_name'
+json_key_timestamp = 'ts'
+json_key_platform = 'platform'
+json_key_md5 = 'md5'
+json_key_headers = 'headers'    # a dict object
+json_key_pii_types = 'pii_types'    # a list
+json_key_pii_category = 'pii_categories'
+json_key_app_name = 'app_name' # can have space and case sensitive
+json_key_tk_flag = 'tk_flag'    # whether a tracker or NOT
+json_key_is_host_ip = 'is_host_ip'  # whether host is IP
+
+
+output_folder = 'data/domain_os/'
+# !!!
+domains_stat_file = 'data/index_dat.csv'
+domains_stat_json = 'data/index_dat.json'
+
+
+domain_os_flows = dict()
+def main():
+    global domain_os_flows, output_folder
+    os.system('mkdir -p %s' % output_folder)
+    dump_os_domains('ios', '../data/manual/ios')
+    dump_os_domains('android', '../data/manual/android')
+    dump_os_domains('windows', '../data/manual/windows')
+    dump_os_domains('android', '../data/anubis')
+    dump_os_domains('android', '../data/auto')
+    cmd = 'rm %s*' % output_folder
+    os.system(cmd)
+    # report_fn = 'data/'
+    with open(domains_stat_file, 'w') as df:
+        df.write('#domain,platform,num_samples,num_positive,tk_flag\n')
+    report_json = dict()
+    for d_o in domain_os_flows:
+        entries = domain_os_flows[d_o]
+        with open(output_folder+d_o, 'w') as of:
+            of.write(json.dumps(entries, sort_keys=True, indent=4))
+        # {domain}_{os}.json    #samples    #pos
+        rj = dict()
+        entry0 = entries[entries.keys()[0]]
+        is_host_ip = entry0.get(json_key_is_host_ip, -1)
+        # TODO: ISOLATE THESE FLOWS TO A SEPARATE FILE
+        tk_flag = entry0.get(json_key_tk_flag, -1)
+        domain = entry0.get(json_key_domain, None)
+
+        platform = entry0.get(json_key_platform, None)
+
+        report = '%s,%s' % (domain, platform)
+        num_samples = len(entries)
+        report += ',%s' % num_samples
+        num_positive_samples = 0
+
+        for k in entries:
+            entry = entries[k]
+            label = entry[json_key_label]
+            if label == 1:
+                num_positive_samples += 1
+        report += ',%s' %  num_positive_samples
+        report += ',%s' % tk_flag
+        with open(domains_stat_file, 'a+') as df:
+            df.write('%s\n' % report)
+        rj[json_key_domain] = domain
+        rj[json_key_platform] = platform
+        rj['num_samples'] = num_samples
+        rj['num_positive'] = num_positive_samples
+        rj['tk_flag'] = tk_flag
+        report_json[d_o] = rj
+
+        # if num_positive_samples >0:
+        #     exit(0)
+    with open(domains_stat_json, 'w') as df:
+        df.write(json.dumps(report_json, sort_keys=True, indent=4))
+    print '%s domain_oses processed' % (len(domain_os_flows))
+
+
+
+def dump_os_domains(dev_os, fpath):
+    # e.g. fpath: data/manual/ios/
+    global domain_os_flows
+    # os.system("rm %s/*" % fpath)
+    for fn in os.listdir(fpath):
+        full_path = fpath + '/' + fn
+        with open(full_path) as jf:
+            data = json.load(jf)
+            for k in data:
+                entry = data[k]
+                host = entry.get(json_key_host, None)
+                domain = entry.get(json_key_domain, host)
+                platform = entry.get(json_key_platform, 'unknown')
+                domain_os = '%s_%s.json' % (domain, platform)
+                if domain_os not in domain_os_flows:
+                    domain_os_flows[domain_os] = dict()
+
+                domain_os_flows[domain_os][k] = entry
+
+
+if __name__ == '__main__':
+    main()

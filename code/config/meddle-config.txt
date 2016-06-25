@@ -1,0 +1,51 @@
+numOfDataPoints=500000
+numOfTestPoints=500000
+ratio=0.7
+trainSetDir=data/train_set/
+testSetDir=data/test_set/
+goodFieldConfig=config/good_fields.txt
+userConfig=config/users.txt
+ruleOutConfig=config/rule-out.txt
+generalType=config/general-types.txt
+badKeysConfig=config/bad_keys.txt
+fullirbusersConfig=config/full_packet_irb_users.txt
+wildBadKeysConfig=config/all_bad_keys.txt
+stopwordConfig=config/stop_words.txt
+orgUpdateConfig=config/org_update.txt
+featureNameFile=data/result/featureNames.txt
+trainSetArff=data/result/trainset.arff
+trainSetFilteredArff=data/result/trainset-filtered.arff
+testSetArff=data/result/testset.arff
+testSetFilteredArff=data/result/testset-filtered.arff
+structureArff=data/result/structure.arff
+classifierEvaluation=data/result/eval.txt
+logsDecrypted=user-study/logs-decrypted/
+isLoad=true
+featureSelected=300
+randstringTxt=data/result/piireplace.txt
+selectedFeatureNameFile=data/result/selectedFeatureNames.txt
+modelFile=data/result/weka.classifiers.functions.SGD.model
+pTon=0.5
+dataNegative=data/negative/
+dataPositive=data/positive/
+dataDomain0=data/domain0/
+dataDomain1=data/domain1/
+dataModel=data/model/
+dataArff=data/arff/
+dataLogs=data/logs/
+trackerFromDB=false
+trackerFile=data/model/trackers.txt
+thresholdOfFrequency=20
+realUserPcapDataPath=httplog/
+broLogDecryptedPath=httplog/anubis/
+positivelyPredictedFolder=data/ppredict/
+negativelyPredictedFolder=data/npredict/
+debug=false
+IOS_PREFIX=10.11.1.
+ANDROID_PREFIX=10.11.2.
+###Meddle Related Settings###
+dbPassword=M3ddling
+###End of Meddle Related Settings###
+##START OF NECESSARY FOR RECON###
+
+##END OF NECESSARY FOR RECON###

@@ -1,0 +1,65 @@
+#!/usr/bin/python
+"""
+This file is part of ReCon.
+
+    ReCon is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Foobar is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>."
+"""
+import os
+import sys
+
+if len(sys.argv) < 2:
+    print '%s wekaHomePath' % sys.argv[0]
+    exit(0)
+weka_home_path = sys.argv[1]
+if weka_home_path == 'clean':
+    os.system('rm train predict ')
+    exit(0)
+print weka_home_path
+
+template_train = """#!/bin/bash
+#./train.sh J48
+WEKA_HOME=REPLACE_REAL_WEKA_HOME
+WEKA_MEDDLE_LIB=${WEKA_HOME}/build/classes/:${WEKA_HOME}/lib/weka.jar:${WEKA_HOME}/lib/mysql-connector-java-5.0.8-bin.jar:${WEKA_HOME}/lib/json-simple-1.1.1.jar:${WEKA_HOME}/lib/regdom4j-1.0.2.jar:${WEKA_HOME}/lib/dom4j-2.0.0-ALPHA-2.jar
+java -Xmx20G -cp $WEKA_MEDDLE_LIB meddle.Main ${WEKA_HOME}/ -t $1
+"""
+
+
+template_train = template_train.replace('REPLACE_REAL_WEKA_HOME', weka_home_path)
+with open('train', 'w') as ff:
+    ff.write(template_train)
+
+template_predict = """#!/bin/bash
+#./predict.sh flow.json
+WEKA_HOME=REPLACE_REAL_WEKA_HOME
+WEKA_MEDDLE_LIB=${WEKA_HOME}/build/classes/:${WEKA_HOME}/lib/weka.jar:${WEKA_HOME}/lib/mysql-connector-java-5.0.8-bin.jar:${WEKA_HOME}/lib/json-simple-1.1.1.jar:${WEKA_HOME}/lib/regdom4j-1.0.2.jar:${WEKA_HOME}/lib/dom4j-2.0.0-ALPHA-2.jar
+java -Xmx20G -cp $WEKA_MEDDLE_LIB meddle.Main ${WEKA_HOME}/ -p J48 $1
+
+"""
+
+template_predict = template_predict.replace('REPLACE_REAL_WEKA_HOME', weka_home_path)
+with open('predict', 'w') as ff:
+    ff.write(template_predict)
+os.system('ant compile')
+os.system('chmod +x train')
+os.system('chmod +x predict')
+
+# set up folders
+os.system('mkdir -p data/arff')
+os.system('mkdir -p data/dt')
+os.system('mkdir -p data/logs')
+os.system('mkdir -p data/model')
+
+print 'Next'
+print '\t./train J48'
+print '\t./predict {xx.json}'

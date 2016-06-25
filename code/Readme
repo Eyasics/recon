@@ -1,0 +1,14 @@
+## Prerequisites
+// ant and jdk 1.7+
+sudo apt-get install openjdk-7-jdk
+sudo apt-get install ant
+
+Possible Dependencies:
+sudo pip install publicsuffix
+
+## Steps
+./prepare_data
+./setup weka_home_path
+./train J48
+./predict {jsonFile}
+  //e.g. ./predict data/domain_os/aax-us-east.amazon-adsystem.com_android.json

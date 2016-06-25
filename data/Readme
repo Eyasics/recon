@@ -1,0 +1,11 @@
+DataSet
+Description:
+manual/   # manual test for top 100 apps in each store
+|_  android
+|_  ios
+|_  windows
+anubis/ # network traces from Andrubis
+auto/ # monkey automated tests
+
+You must agree to the terms here to use the data:
+http://recon.meddle.mobi/terms.html

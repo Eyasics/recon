@@ -1,0 +1,840 @@
+{
+    "24sms.net_android": {
+        "PhoneNumber,recon_phonenumber": 0.4, 
+        "SendFrom,recon_phonenumber": 1.0
+    }, 
+    "2bunnylabs.com_android": {
+        "id,recon_androidid": 0.6666666666666666
+    }, 
+    "3g.cn_android": {
+        "aid,recon_androidid": 0.68, 
+        "android_id,recon_androidid": 0.3333333333333333, 
+        "androidid,recon_androidid": 0.8529411764705882, 
+        "gadid,recon_advertiserid": 0.2
+    }, 
+    "3gogo.net.cn_android": {
+        "i,recon_meid": 1.0
+    }, 
+    "51y5.com_android": {
+        "ii,recon_imei": 0.08333333333333333, 
+        "ii,recon_meid": 0.9166666666666666
+    }, 
+    "51y5.net_android": {
+        "ii,recon_imei": 0.08, 
+        "ii,recon_meid": 0.92, 
+        "imei,recon_imei": 0.1, 
+        "imei,recon_meid": 0.9, 
+        "sim,recon_iccid": 0.14285714285714285
+    }, 
+    "8864.com_android": {
+        "deviceid,recon_imei": 1.0, 
+        "installid,recon_androidid": 1.0
+    }, 
+    "91.com_android": {
+        "mobilekey,recon_imei": 1.0
+    }, 
+    "a.applovin.com_android": {
+        "idfa,recon_advertiserid": 1.0
+    }, 
+    "a.applovin.com_ios": {
+        "idfa,recon_idfa": 0.9344262295081968
+    }, 
+    "aax-us-east.amazon-adsystem.com_android": {
+        "idfa,recon_advertiserid": 1.0
+    }, 
+    "aax-us-east.amazon-adsystem.com_ios": {
+        "idfa,recon_idfa": 1.0
+    }, 
+    "ad-market.mobi_android": {
+        "androidId,recon_androidid": 0.6363636363636364, 
+        "userId,recon_androidid": 1.0
+    }, 
+    "ad-x.co.uk_android": {
+        "androidID,recon_androidid": 0.34782608695652173, 
+        "idfa,recon_advertiserid": 0.9583333333333334, 
+        "macAddress,recon_macaddr": 0.34782608695652173, 
+        "udid,recon_imei": 0.3333333333333333
+    }, 
+    "ad-x.co.uk_ios": {
+        "isu,recon_idfa": 1.0
+    }, 
+    "adhubs.net_android": {
+        "androidid,recon_androidid": 0.1, 
+        "deviceid,recon_imei": 0.9, 
+        "deviceid,recon_meid": 0.1
+    }, 
+    "adjust.io_ios": {
+        "idfa,recon_idfa": 1.0, 
+        "ifa,recon_idfa": 1.0
+    }, 
+    "adkmob.com_android": {
+        "aid,recon_androidid": 0.9787234042553191, 
+        "android_id,recon_androidid": 1.0, 
+        "androidid,recon_androidid": 0.5294117647058824, 
+        "gaid,recon_advertiserid": 1.0
+    }, 
+    "adlayout.net_android": {
+        "deviceId,recon_meid": 1.0
+    }, 
+    "adnxs.com_ios": {
+        "idfa,recon_idfa": 1.0, 
+        "idfa1,recon_idfa": 1.0
+    }, 
+    "ads.celtra.com_android": {
+        "uid,recon_advertiserid": 1.0
+    }, 
+    "adserver.com_ios": {
+        "applicationUserId,recon_idfa": 1.0
+    }, 
+    "adsorb.com_android": {
+        "userId,recon_advertiserid": 1.0
+    }, 
+    "adtilt.com_ios": {
+        "raw_advertising_id,recon_idfa": 1.0
+    }, 
+    "adview.cn_android": {
+        "keyDev,recon_imei": 0.01639344262295082, 
+        "keyDev,recon_meid": 0.9836065573770492, 
+        "keydev,recon_meid": 1.0
+    }, 
+    "afftrx.com_android": {
+        "androidid,recon_advertiserid": 0.4, 
+        "androidid,recon_androidid": 0.6
+    }, 
+    "amazonaws.com_android": {
+        "Attribute.4.Value,recon_androidid": 0.6666666666666666, 
+        "ItemName,recon_androidid": 0.6666666666666666, 
+        "uid,recon_advertiserid": 0.5
+    }, 
+    "android.bcfads.com_android": {
+        "mobile_id,recon_imei": 1.0
+    }, 
+    "antivirusonandroid.com_android": {
+        "email,recon_email": 1.0
+    }, 
+    "api-01.com_ios": {
+        "ios_ifa,recon_idfa": 1.0, 
+        "unid,recon_idfa": 1.0
+    }, 
+    "api-03.com_ios": {
+        "ios_ifa,recon_idfa": 1.0
+    }, 
+    "appclick.co_android": {
+        "Value,recon_advertiserid": 1.0
+    }, 
+    "appflood.com_android": {
+        "adid,recon_advertiserid": 1.0
+    }, 
+    "applifier.com_android": {
+        "rawAdvertisingTrackingId,recon_advertiserid": 1.0
+    }, 
+    "applift.com_android": {
+        "unid,recon_advertiserid": 0.5
+    }, 
+    "applovin.com_android": {
+        "idfa,recon_advertiserid": 1.0
+    }, 
+    "appsfire.net_ios": {
+        "device_id,recon_idfa": 1.0, 
+        "idfa,recon_idfa": 1.0
+    }, 
+    "appsflyer.com_android": {
+        "advertising_id,recon_advertiserid": 0.21428571428571427, 
+        "deviceAndroidId,recon_advertiserid": 0.5, 
+        "google_aid,recon_advertiserid": 1.0, 
+        "imei,recon_imei": 0.13333333333333333, 
+        "uid,recon_imei": 0.3333333333333333
+    }, 
+    "appsflyer.com_ios": {
+        "idfa,recon_idfa": 1.0
+    }, 
+    "apptornado.com_android": {
+        "aid,recon_androidid": 0.5
+    }, 
+    "apsalar.com_android": {
+        "u,recon_androidid": 0.8602150537634409
+    }, 
+    "atdmt.com_android": {
+        "aaid,recon_advertiserid": 1.0
+    }, 
+    "axonix.com_android": {
+        "andid,recon_androidid": 1.0, 
+        "d,recon_meid": 1.0, 
+        "u,recon_meid": 1.0
+    }, 
+    "azurewebsites.net_windows": {
+        "l,recon_x-wp-anid": 1.0
+    }, 
+    "betrad.com_android": {
+        "foreignUserId,recon_advertiserid": 1.0
+    }, 
+    "bluekai.com_ios": {
+        "id,recon_idfa": 0.5714285714285714
+    }, 
+    "c.medialytics.com_android": {
+        "osdevid,recon_advertiserid": 0.8333333333333334
+    }, 
+    "chartbeat.com_ios": {
+        "g,recon_gender": 1.0, 
+        "rzip,recon_zipcode": 1.0
+    }, 
+    "chartbeat.net_ios": {
+        "g,recon_gender": 0.75, 
+        "rzip,recon_zipcode": 1.0
+    }, 
+    "clearchannel.com_ios": {
+        "g,recon_gender": 1.0, 
+        "rzip,recon_zipcode": 1.0
+    }, 
+    "cloudmade.com_android": {
+        "userid,recon_imei": 0.2, 
+        "userid,recon_meid": 0.8
+    }, 
+    "cpatrk.net_android": {
+        "did,recon_imei": 1.0
+    }, 
+    "crwdcntrl.net_ios": {
+        "g,recon_gender": 1.0, 
+        "rzip,recon_zipcode": 1.0
+    }, 
+    "d37gvrvc0wt4s1.cloudfront.net_android": {
+        "google_ad_id,recon_advertiserid": 1.0
+    }, 
+    "de17a.com_ios": {
+        "uid,recon_idfa": 1.0
+    }, 
+    "dewmobile.net_android": {
+        "imei,recon_meid": 1.0
+    }, 
+    "direct-tap.com_android": {
+        "android_id,recon_androidid": 1.0, 
+        "google_aid,recon_advertiserid": 1.0
+    }, 
+    "doodlemobile.com_android": {
+        "d,recon_advertiserid": 1.0, 
+        "deviceId,recon_advertiserid": 1.0
+    }, 
+    "doubleclick.net_android": {
+        "deviceid,recon_advertiserid": 1.0
+    }, 
+    "doubleclick.net_ios": {
+        "device_id,recon_idfa": 1.0
+    }, 
+    "dxsvr.com_android": {
+        "ie,recon_meid": 1.0
+    }, 
+    "dyntrk.com_ios": {
+        "lrid,recon_idfa": 1.0
+    }, 
+    "eadexchange.com_android": {
+        "aid,recon_androidid": 0.9090909090909091, 
+        "udid,recon_imei": 0.2, 
+        "udid,recon_meid": 0.8
+    }, 
+    "facebook.com_android": {
+        "webname,recon_username": 1.0
+    }, 
+    "facebook.com_ios": {
+        "webname,recon_username": 1.0
+    }, 
+    "feelingtouch.com_android": {
+        "device_id,recon_androidid": 1.0
+    }, 
+    "ft.com_android": {
+        "aid,recon_androidid": 1.0, 
+        "androidid,recon_androidid": 1.0, 
+        "gaid,recon_advertiserid": 1.0, 
+        "google_adid,recon_advertiserid": 1.0, 
+        "mac,recon_macaddr": 1.0, 
+        "mac_addr,recon_macaddr": 1.0, 
+        "sn,recon_serialnumber": 1.0
+    }, 
+    "ft.com_ios": {
+        "1kj,recon_firstname": 1.0, 
+        "idfa,recon_idfa": 1.0, 
+        "idfa_new,recon_idfa": 1.0
+    }, 
+    "fyber.com_android": {
+        "google_ad_id,recon_advertiserid": 1.0
+    }, 
+    "g6pay.com_android": {
+        "phone_id,recon_meid": 1.0
+    }, 
+    "gameanalytics.com_android": {
+        "google_aid,recon_advertiserid": 1.0, 
+        "user_id,recon_advertiserid": 1.0
+    }, 
+    "genina.com_android": {
+        "did,recon_meid": 1.0, 
+        "uid,recon_androidid": 1.0
+    }, 
+    "getap.ps_ios": {
+        "idfa,recon_idfa": 1.0
+    }, 
+    "getwishboneapp.com_ios": {
+        "apple_idfa,recon_idfa": 1.0, 
+        "date_of_birth,recon_dob": 1.0, 
+        "email,recon_email": 1.0, 
+        "gender,recon_gender": 1.0, 
+        "mobile_number,recon_phonenumber": 1.0, 
+        "name,recon_firstname": 1.0, 
+        "username,recon_firstname": 0.5, 
+        "username,recon_username": 0.2
+    }, 
+    "glulive.com_android": {
+        "uid,recon_advertiserid": 1.0
+    }, 
+    "goforandroid.com_android": {
+        "androidid,recon_androidid": 0.8
+    }, 
+    "google-analytics.com_ios": {
+        "g,recon_gender": 1.0, 
+        "rzip,recon_zipcode": 1.0
+    }, 
+    "google.com_ios": {
+        "q,recon_contactname": 0.005917159763313609
+    }, 
+    "googleapis.com_android": {
+        "androidId,recon_androidid": 1.0, 
+        "deviceid,recon_advertiserid": 1.0, 
+        "googleAdId,recon_advertiserid": 1.0
+    }, 
+    "googleapis.com_ios": {
+        "idfa,recon_idfa": 1.0
+    }, 
+    "googlesyndication.com_android": {
+        "foreignUserId,recon_advertiserid": 1.0
+    }, 
+    "greystripe.com_android": {
+        "userid,recon_imei": 0.2857142857142857, 
+        "userid,recon_meid": 0.7142857142857143
+    }, 
+    "gwallet.com_android": {
+        "adv_id,recon_advertiserid": 1.0, 
+        "dpid,recon_advertiserid": 1.0
+    }, 
+    "haloapps.com_android": {
+        "androidid,recon_androidid": 1.0, 
+        "gaid,recon_advertiserid": 0.75, 
+        "imei,recon_imei": 1.0, 
+        "par1,recon_imei": 0.5, 
+        "par2,recon_imsi": 0.5
+    }, 
+    "hastrk2.com_ios": {
+        "ios_ifa,recon_idfa": 0.5555555555555556
+    }, 
+    "heyzap.com_android": {
+        "advertising_id,recon_advertiserid": 1.0, 
+        "device_id,recon_advertiserid": 0.23809523809523808
+    }, 
+    "holalauncher.com_android": {
+        "ardId,recon_androidid": 1.0, 
+        "deviceId,recon_imei": 0.5, 
+        "gaid,recon_advertiserid": 1.0, 
+        "imei,recon_imei": 1.0, 
+        "m0,recon_imsi": 0.5
+    }, 
+    "homebase-apps.com_android": {
+        "device,recon_imei": 1.0
+    }, 
+    "hulu.com_android": {
+        "_hulu_uname,recon_firstname": 1.0, 
+        "device_ad_id,recon_advertiserid": 1.0, 
+        "device_id,recon_imei": 0.13100436681222707, 
+        "deviceid,recon_imei": 1.0
+    }, 
+    "iheart.com_android": {
+        "zipCode,recon_zipcode": 0.6666666666666666
+    }, 
+    "iheartradio.com_ios": {
+        "g,recon_gender": 0.5, 
+        "rzip,recon_zipcode": 1.0
+    }, 
+    "ihrhls.com_android": {
+        "listenerId,recon_advertiserid": 1.0
+    }, 
+    "ihrhls.com_ios": {
+        "listenerId,recon_idfa": 1.0
+    }, 
+    "ijinshan.com_android": {
+        "pid,recon_imei": 0.8421052631578947
+    }, 
+    "inner-active.mobi_android": {
+        "hid,recon_imei": 1.0
+    }, 
+    "innovid.com_android": {
+        "deviceid,recon_advertiserid": 1.0
+    }, 
+    "instagram.com_ios": {
+        "igfl,recon_username": 1.0
+    }, 
+    "iobit.com_android": {
+        "deviceid,recon_androidid": 1.0
+    }, 
+    "isodroid.com_android": {
+        "uid,recon_meid": 1.0
+    }, 
+    "joycityplay.com_android": {
+        "nickname,recon_username": 1.0
+    }, 
+    "jumptap.com_ios": {
+        "idfa,recon_idfa": 1.0
+    }, 
+    "king.com_android": {
+        "androidId,recon_androidid": 1.0, 
+        "deviceId,recon_androidid": 1.0, 
+        "googleAdId,recon_advertiserid": 1.0, 
+        "params,recon_firstname": 0.0013386880856760374
+    }, 
+    "king.com_ios": {
+        "idfa,recon_idfa": 1.0
+    }, 
+    "kochava.com_ios": {
+        "device_id,recon_idfa": 1.0
+    }, 
+    "kontagent.net_android": {
+        "aid,recon_androidid": 1.0, 
+        "ifa,recon_advertiserid": 1.0, 
+        "imei,recon_imei": 1.0
+    }, 
+    "kontagent.net_ios": {
+        "ifa,recon_idfa": 1.0
+    }, 
+    "krxd.net_ios": {
+        "partner_uid,recon_idfa": 1.0
+    }, 
+    "ksmobile.com_android": {
+        "aid,recon_androidid": 0.4444444444444444
+    }, 
+    "lazyswipe.com_android": {
+        "deviceId,recon_imei": 1.0
+    }, 
+    "lenovomm.com_android": {
+        "AndID,recon_androidid": 1.0, 
+        "DevID,recon_meid": 1.0, 
+        "aid,recon_androidid": 1.0, 
+        "di,recon_meid": 1.0
+    }, 
+    "lh.pl_android": {
+        "email,recon_imei": 0.5
+    }, 
+    "liftoff.io_android": {
+        "device_id,recon_advertiserid": 1.0
+    }, 
+    "liftoff.io_ios": {
+        "device_id,recon_idfa": 1.0
+    }, 
+    "liverail.com_ios": {
+        "LR_IDFA,recon_idfa": 1.0, 
+        "id,recon_idfa": 0.5, 
+        "partner_uid,recon_idfa": 1.0, 
+        "tpid,recon_idfa": 0.4, 
+        "uid,recon_idfa": 1.0
+    }, 
+    "llnwd.net_android": {
+        "deviceid,recon_advertiserid": 1.0
+    }, 
+    "localytics.com_ios": {
+        "adid,recon_idfa": 0.3333333333333333, 
+        "cadid,recon_idfa": 0.3333333333333333
+    }, 
+    "loopme.me_android": {
+        "vt,recon_advertiserid": 1.0
+    }, 
+    "magmamobile.com_android": {
+        "di,recon_androidid": 1.0
+    }, 
+    "maxthon.com_android": {
+        "imei,recon_imei": 0.3333333333333333, 
+        "imei,recon_meid": 0.6666666666666666, 
+        "imie,recon_imei": 0.3333333333333333, 
+        "imie,recon_meid": 0.6666666666666666
+    }, 
+    "mdotm.com_android": {
+        "aid,recon_androidid": 0.5, 
+        "deviceid,recon_imei": 1.0, 
+        "gaid,recon_advertiserid": 1.0
+    }, 
+    "mdotm.com_ios": {
+        "aid,recon_idfa": 1.0
+    }, 
+    "mediabrix.com_android": {
+        "UID,recon_advertiserid": 1.0, 
+        "id,recon_advertiserid": 1.0, 
+        "value,recon_advertiserid": 0.3333333333333333
+    }, 
+    "medialytics.com_android": {
+        "osdevid,recon_advertiserid": 0.8333333333333334
+    }, 
+    "metrics.tbliab.net_android": {
+        "deviceid,recon_advertiserid": 1.0, 
+        "ecmd5,recon_advertiserid": 1.0
+    }, 
+    "migital.com_android": {
+        "IMEI,recon_meid": 1.0, 
+        "imei,recon_meid": 1.0
+    }, 
+    "miniclippt.com_ios": {
+        "uid,recon_idfa": 1.0
+    }, 
+    "minimob.com_android": {
+        "adid,recon_advertiserid": 1.0, 
+        "androidid,recon_androidid": 1.0, 
+        "msisdn,recon_phonenumber": 1.0
+    }, 
+    "mkhoj.com_android": {
+        "udid,recon_androidid": 1.0
+    }, 
+    "mmnetwork.mobi_android": {
+        "google_ad_id,recon_advertiserid": 0.8571428571428571
+    }, 
+    "mmnetwork.mobi_ios": {
+        "idfa,recon_idfa": 1.0
+    }, 
+    "moatads.com_android": {
+        "deviceid,recon_advertiserid": 1.0
+    }, 
+    "mob-appz.com_android": {
+        "caddevice_ifa,recon_advertiserid": 0.25925925925925924
+    }, 
+    "mobclix.com_android": {
+        "d,recon_imei": 0.625, 
+        "d,recon_meid": 0.375, 
+        "u,recon_imei": 0.7272727272727273
+    }, 
+    "mobfox.com_android": {
+        "o,recon_androidid": 0.30120481927710846, 
+        "o,recon_imei": 0.3855421686746988, 
+        "o,recon_meid": 0.14457831325301204, 
+        "o2,recon_androidid": 0.3333333333333333, 
+        "o_andadvid,recon_advertiserid": 0.5945945945945946, 
+        "o_androidid,recon_androidid": 0.15384615384615385, 
+        "o_androidimei,recon_imei": 0.8461538461538461, 
+        "o_androidimei,recon_meid": 0.15384615384615385
+    }, 
+    "mobilecore.com_android": {
+        "imei,recon_imei": 0.2222222222222222, 
+        "imei,recon_meid": 0.4444444444444444, 
+        "mac,recon_macaddr": 0.48, 
+        "userId,recon_androidid": 0.5625, 
+        "xid,recon_advertiserid": 0.06060606060606061, 
+        "xid,recon_androidid": 0.36363636363636365
+    }, 
+    "mobilecraft.net_android": {
+        "device_id,recon_androidid": 1.0, 
+        "email,recon_email": 1.0, 
+        "phone,recon_phonenumber": 1.0
+    }, 
+    "mopub.com_android": {
+        "udid,recon_androidid": 0.006349206349206349
+    }, 
+    "movile.com_android": {
+        "IMEI,recon_imei": 0.047619047619047616, 
+        "IMEI,recon_meid": 0.9523809523809523, 
+        "openUDID,recon_androidid": 0.9523809523809523
+    }, 
+    "musical.ly_android": {
+        "email,recon_email": 1.0, 
+        "nickName,recon_firstname": 1.0, 
+        "password,recon_password": 1.0
+    }, 
+    "musical.ly_ios": {
+        "email,recon_email": 1.0, 
+        "instagramID,recon_username": 0.75, 
+        "nickName,recon_username": 1.0, 
+        "password,recon_password": 1.0
+    }, 
+    "mydas.mobi_android": {
+        "aaid,recon_advertiserid": 1.0, 
+        "auid,recon_imei": 0.5, 
+        "auid,recon_meid": 0.4
+    }, 
+    "mydas.mobi_ios": {
+        "uaid,recon_idfa": 1.0
+    }, 
+    "naturalmotion.com_ios": {
+        "userName,recon_firstname": 1.0
+    }, 
+    "newrelic.com_ios": {
+        "g,recon_gender": 1.0, 
+        "rzip,recon_zipcode": 1.0
+    }, 
+    "nr-data.net_ios": {
+        "g,recon_gender": 1.0, 
+        "rzip,recon_zipcode": 1.0
+    }, 
+    "offerlabs.com_android": {
+        "imei,recon_androidid": 1.0
+    }, 
+    "offermob.me_android": {
+        "deviceAndroidId,recon_advertiserid": 0.5, 
+        "google_ad_id,recon_androidid": 0.09090909090909091
+    }, 
+    "on-mobi.com_android": {
+        "udid,recon_androidid": 1.0
+    }, 
+    "oovoo.com_android": {
+        "InstID,recon_androidid": 1.0, 
+        "InviteesID,recon_username": 1.0, 
+        "MAC,recon_macaddr": 1.0, 
+        "UserID,recon_firstname": 0.8333333333333334
+    }, 
+    "p-cdn.com_ios": {
+        "webname,recon_username": 1.0
+    }, 
+    "p.medialytics.com_android": {
+        "osdevid,recon_advertiserid": 1.0
+    }, 
+    "pandaapp.com_android": {
+        "imei,recon_imei": 1.0
+    }, 
+    "pandora.com_android": {
+        "webname,recon_username": 1.0
+    }, 
+    "pandora.com_ios": {
+        "fullName,recon_username": 1.0, 
+        "webname,recon_username": 0.9102564102564102
+    }, 
+    "pinger.com_android": {
+        "udid,recon_imei": 0.04838709677419355, 
+        "udid,recon_meid": 0.9516129032258065
+    }, 
+    "playhaven.com_android": {
+        "device,recon_androidid": 1.0, 
+        "ifa,recon_advertiserid": 1.0
+    }, 
+    "playhaven.com_ios": {
+        "ifa,recon_idfa": 1.0
+    }, 
+    "pocketgems.com_ios": {
+        "asid,recon_idfa": 1.0
+    }, 
+    "preguntados.com_windows": {
+        "email,recon_email": 0.8, 
+        "password,recon_password": 1.0
+    }, 
+    "puata.info_android": {
+        "device_id,recon_meid": 1.0, 
+        "mc,recon_macaddr": 1.0
+    }, 
+    "pushwoosh.com_android": {
+        "hwid,recon_androidid": 1.0
+    }, 
+    "quantcount.com_android": {
+        "did,recon_advertiserid": 1.0
+    }, 
+    "redshadow.org_android": {
+        "name,recon_firstname": 0.8, 
+        "username,recon_firstname": 0.8
+    }, 
+    "revsci.net_android": {
+        "foreignUserId,recon_advertiserid": 1.0
+    }, 
+    "revsci.net_ios": {
+        "id,recon_idfa": 1.0
+    }, 
+    "rlcdn.com_ios": {
+        "partner_uid,recon_idfa": 0.5714285714285714
+    }, 
+    "rollout.io_ios": {
+        "device_name,recon_devicename": 1.0
+    }, 
+    "s.amazon-adsystem.com_android": {
+        "idfa,recon_advertiserid": 1.0
+    }, 
+    "s.amazon-adsystem.com_ios": {
+        "idfa,recon_idfa": 1.0
+    }, 
+    "scorecardresearch.com_android": {
+        "c12,recon_advertiserid": 0.1320754716981132, 
+        "foreignUserId,recon_advertiserid": 1.0
+    }, 
+    "scorecardresearch.com_ios": {
+        "c12,recon_idfa": 0.2857142857142857, 
+        "g,recon_gender": 1.0, 
+        "rzip,recon_zipcode": 1.0
+    }, 
+    "sdo.com_android": {
+        "imei,recon_meid": 1.0
+    }, 
+    "searchmobilestuff.com_android": {
+        "deviceId,recon_imei": 1.0
+    }, 
+    "serving-sys.com_android": {
+        "google_ad_id,recon_advertiserid": 0.75
+    }, 
+    "sgn.com_android": {
+        "userId,recon_androidid": 1.0
+    }, 
+    "sgnapps.com_android": {
+        "user_cd,recon_advertiserid": 0.5, 
+        "user_cd,recon_androidid": 0.5
+    }, 
+    "sky.com_android": {
+        "IMEI,recon_meid": 1.0
+    }, 
+    "smaato.com_android": {
+        "ownid,recon_androidid": 1.0
+    }, 
+    "smaato.net_android": {
+        "googleadid,recon_advertiserid": 1.0, 
+        "ownid,recon_imei": 0.32710280373831774, 
+        "ownid,recon_meid": 0.6728971962616822
+    }, 
+    "smule.com_ios": {
+        "advId,recon_idfa": 0.25, 
+        "email,recon_email": 1.0, 
+        "uuid,recon_idfa": 0.25
+    }, 
+    "sponsorpay.com_android": {
+        "google_ad_id,recon_advertiserid": 1.0
+    }, 
+    "spotxchange.com_android": {
+        "deviceifa,recon_advertiserid": 1.0
+    }, 
+    "sprint.com_android": {
+        "zoneToken2,recon_androidid": 1.0
+    }, 
+    "spsliveops.com_android": {
+        "adid,recon_advertiserid": 1.0, 
+        "uid,recon_androidid": 1.0
+    }, 
+    "startappexchange.com_android": {
+        "tt_android_id,recon_androidid": 1.0, 
+        "userAdvertisingId,recon_advertiserid": 0.041666666666666664, 
+        "userId,recon_androidid": 0.6304347826086957
+    }, 
+    "startappservice.com_android": {
+        "userAdvertisingId,recon_advertiserid": 1.0
+    }, 
+    "stats.pandora.com_android": {
+        "type2.tracking_id,recon_advertiserid": 1.0
+    }, 
+    "storm8.com_android": {
+        "adid,recon_imei": 0.75, 
+        "adid,recon_meid": 0.25, 
+        "asid,recon_androidid": 0.25, 
+        "udid,recon_androidid": 0.25
+    }, 
+    "supersonicads.com_android": {
+        "deviceIdsAID,recon_advertiserid": 1.0
+    }, 
+    "supersonicads.com_ios": {
+        "applicationUserId,recon_idfa": 1.0, 
+        "deviceIdsIFA,recon_idfa": 1.0, 
+        "ifa,recon_idfa": 1.0
+    }, 
+    "tango.me_android": {
+        "androidAdId,recon_advertiserid": 1.0, 
+        "gender,recon_gender": 0.2
+    }, 
+    "tapjoy.com_android": {
+        "advertising_id,recon_advertiserid": 1.0, 
+        "analytics_id,recon_androidid": 1.0, 
+        "android_id,recon_androidid": 1.0, 
+        "udid,recon_imei": 1.0
+    }, 
+    "tapjoy.com_ios": {
+        "advertising_id,recon_idfa": 1.0
+    }, 
+    "tapjoyads.com_android": {
+        "udid,recon_meid": 1.0
+    }, 
+    "taptica.com_android": {
+        "tt_android_id,recon_androidid": 0.5
+    }, 
+    "topaz-analytics.com_android": {
+        "adid,recon_advertiserid": 1.0, 
+        "aid,recon_androidid": 1.0, 
+        "caid,recon_androidid": 1.0
+    }, 
+    "topaz-analytics.com_ios": {
+        "adid,recon_idfa": 1.0
+    }, 
+    "traktum.com_android": {
+        "s5,recon_advertiserid": 0.42857142857142855, 
+        "s5,recon_androidid": 0.2857142857142857
+    }, 
+    "tropworld-rubyseven.com_android": {
+        "S,recon_gender": 0.04
+    }, 
+    "truecaller.com_android": {
+        "imei,recon_imei": 1.0
+    }, 
+    "tweakker.com_android": {
+        "imei,recon_meid": 1.0
+    }, 
+    "twitter.com_android": {
+        "device_id,recon_advertiserid": 1.0
+    }, 
+    "umeng.co_android": {
+        "device_id,recon_androidid": 1.0
+    }, 
+    "umeng.com_android": {
+        "device_id,recon_androidid": 0.032679738562091505, 
+        "device_id,recon_imei": 0.29411764705882354, 
+        "device_id,recon_macaddr": 0.013071895424836602, 
+        "device_id,recon_meid": 0.6601307189542484, 
+        "mc,recon_macaddr": 0.912621359223301
+    }, 
+    "umengcloud.com_android": {
+        "c4,recon_macaddr": 1.0, 
+        "c5,recon_serialnumber": 1.0, 
+        "c6,recon_androidid": 1.0, 
+        "mc,recon_macaddr": 1.0
+    }, 
+    "unity3d.com_ios": {
+        "aid,recon_idfa": 1.0
+    }, 
+    "vungle.com_android": {
+        "ifa,recon_advertiserid": 1.0, 
+        "isu,recon_androidid": 1.0, 
+        "ma,recon_macaddr": 1.0
+    }, 
+    "vungle.com_ios": {
+        "ifa,recon_idfa": 0.9302325581395349, 
+        "isu,recon_idfa": 0.36363636363636365
+    }, 
+    "windowsphone.com_windows": {
+        "MUID,recon_muid": 1.0, 
+        "X-WP-DEVICE-ID,recon_x-wp-device-id": 1.0
+    }, 
+    "wish.com_ios": {
+        "gender,recon_gender": 1.0
+    }, 
+    "xda.cn_android": {
+        "mob_userid,recon_imei": 0.6666666666666666, 
+        "mob_userid,recon_meid": 0.3333333333333333
+    }, 
+    "yahoo.com_ios": {
+        "_di,recon_idfa": 0.09090909090909091
+    }, 
+    "youappi.com_android": {
+        "deviceAndroidId,recon_advertiserid": 0.4166666666666667
+    }, 
+    "youtube.com_ios": {
+        "g,recon_gender": 1.0, 
+        "rzip,recon_zipcode": 1.0
+    }, 
+    "yoz.io_android": {
+        "android_id,recon_androidid": 1.0, 
+        "device_id,recon_androidid": 0.8823529411764706, 
+        "yozio_udid,recon_androidid": 1.0
+    }, 
+    "yoz.io_ios": {
+        "device_name,recon_devicename": 1.0
+    }, 
+    "yp.com_android": {
+        "xid,recon_advertiserid": 1.0
+    }, 
+    "zonagratis.com.br_android": {
+        "identifier,recon_email": 1.0, 
+        "user_identifier,recon_email": 1.0
+    }, 
+    "zyngatracking.com_android": {
+        "device_id,recon_meid": 1.0
+    }, 
+    "zyngawithfriends.com_android": {
+        "DEVICE-ID,recon_meid": 1.0
+    }
+}
