@@ -53,13 +53,8 @@ public class TrainModelByDomainOS {
 	public final static int LABEL_POSITIVE = 1;
 	public final static int LABEL_NEGATIVE = 0;
 	public final static String CLASS_FEATURE_NAME = "PIILabel";
+	public static int MANY = 5000;
 
-//	
-//
-//	public static void main(String[] args) {
-////		trainAllDomains("J48", "data/test.json");
-//		trainAllDomains("J48", null);
-//	}
 
 	/**
 	 * Load all labelled network flows from JSON files and train classifiers for
@@ -80,11 +75,16 @@ public class TrainModelByDomainOS {
 			int numTrained = 0;
 			for (Object k : domain_os_reports.keySet()) {
 				String fileName = (String) k;
+				if (fileName.equals("general.json")){
+					System.out.println("Training general, usually takes 30 mins...");
+				}
+				
 				JSONObject info = (JSONObject) domain_os_reports.get(k);
 				int tk_flag = Util.getIntFromJSONObject(info, TK_FLAG);
 				int num_pos = Util.getIntFromJSONObject(info, NUM_POSITIVE);
 				Info inf = new Info();
 				inf.domain = Util.getStringFromJSONObject(info, DOMAIN);
+				
 				inf.OS = Util.getStringFromJSONObject(info, PLATFORM);
 				inf.domainOS = inf.domain + "_" + inf.OS;
 				inf.initNumPos = Util.getIntFromJSONObject(info, NUM_POSITIVE);
@@ -95,17 +95,19 @@ public class TrainModelByDomainOS {
 
 				// Only train domains that are A&A and have positive flows
 				if (tk_flag == 1 && num_pos > 0 && inf.initNumNeg > 0) {
+					System.out.println("Training "+ inf.domainOS + " ...");
 					trainOneDomain(fileName, classifierName, 0, inf);
 					numTrained ++;
 				}
 			}
+			
 			System.out.println(numTrained + " <domain,os> trained.");
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}
 
 	}
-
+	
 	/**
 	 * Train a classifier given the name of a tracker domain
 	 * 
@@ -122,7 +124,7 @@ public class TrainModelByDomainOS {
 			String classifierName, int thresholdFrequency, Info info) {
 		MetaEvaluationMeasures mem = new MetaEvaluationMeasures();
 		mem.info = info;
-		// TODO: Add general classifier training here
+		// DONE: the general classifier is a specific domain
 		long t1 = System.nanoTime();
 		TrainingData trainingData = populateTrainingSet(jsonDataPathRelative,
 				thresholdFrequency, mem);
@@ -155,12 +157,13 @@ public class TrainModelByDomainOS {
 		try {
 			domainOSFlows = (JSONObject) parser.parse(new FileReader(
 					RConfig.trainingDataFolder + jsonFilePathRelative));
-
+			System.out.println(RConfig.trainingDataFolder + jsonFilePathRelative+domainOSFlows.size());
 			int[] changes = balanceClassSamples(
 					trainingData.mem.info.initNumPos,
 					trainingData.mem.info.initNumNeg, 10);
-			if (changes[0] > 0 || changes[1] > 0) {
+			if (changes[0] != 0 || changes[1] != 0) {
 				// IF the sample needs balancing
+				System.out.println("Try to balance the samples...");
 				JSONObject posDomainOSFlows = new JSONObject();
 				JSONObject negDomainOSFlows = new JSONObject();
 
@@ -259,7 +262,7 @@ public class TrainModelByDomainOS {
 		}
 		return trainingData;
 	}
-
+	
 	/**
 	 * Give the number of positive samples and the number of negative samples,
 	 * find out the balancing values for both parties.
@@ -277,11 +280,17 @@ public class TrainModelByDomainOS {
 			numPosChange = numFold - numPos;
 			numNegChange = numFold - numNeg;
 		} else if (numPos > numNeg) {
-			//
-			numNegChange = numPos - numNeg;
-
+			// more positive numbers
+//			if(numPos > MANY )
+//			{
+//				numPosChange = MANY - numPos;
+//			}else{
+				numNegChange = numPos - numNeg;
+//			}
 		} else { // numPos <= numNeg
-			if (numNeg > 100) {
+			if (numNeg > MANY){
+				numNegChange = MANY - numNeg;
+			}else if (numNeg > 100) {
 				if (numPos > 100)
 					numNegChange = 100 - numNeg;
 				else {
@@ -296,6 +305,8 @@ public class TrainModelByDomainOS {
 		int[] changes = new int[2];
 		changes[0] = numPosChange; // Change to positive samples
 		changes[1] = numNegChange; // Change to negative samples
+//		System.out.println(changes[0]);
+//		System.out.println(changes[1]);
 		return changes;
 
 	}
@@ -372,6 +383,7 @@ public class TrainModelByDomainOS {
 			Map<String, Integer> wordCount,
 			ArrayList<Map<String, Integer>> trainMatrix,
 			ArrayList<Integer> PIILabels, int numSamples, int theta) {
+//		System.out.println(info);
 		// Mapping feature_name_index
 		Map<String, Integer> fi = new HashMap<String, Integer>();
 		int index = 0;
@@ -446,8 +458,12 @@ public class TrainModelByDomainOS {
 			String classifierName = classifier.getClass().toString();
 			classifierName = classifierName.substring(classifierName
 					.lastIndexOf(".") + 1);
+			if(trainingSet.numInstances() > MANY){
+				System.out.println("This might take over 30 minutes for "+ trainingSet.numInstances() + " samples ..." );
+			}
 			classifier.buildClassifier(trainingSet);
 			long t2 = System.nanoTime();
+			
 
 			double trainingTime = (t2 - t1) / 10e8;
 

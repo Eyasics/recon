@@ -46,7 +46,7 @@ output_folder = 'data/domain_os/'
 # !!!
 domains_stat_file = 'data/index_dat.csv'
 domains_stat_json = 'data/index_dat.json'
-
+out_general = 'data/domain_os/general.json'
 
 domain_os_flows = dict()
 def main():
@@ -57,13 +57,17 @@ def main():
     dump_os_domains('windows', '../data/manual/windows')
     dump_os_domains('android', '../data/anubis')
     dump_os_domains('android', '../data/auto')
-    cmd = 'rm %s*' % output_folder
+    cmd = 'rm %s* 2>/dev/null' % output_folder
     os.system(cmd)
     # report_fn = 'data/'
     with open(domains_stat_file, 'w') as df:
         df.write('#domain,platform,num_samples,num_positive,tk_flag\n')
     report_json = dict()
+    general_pos = 0
+    general_total = 0
+    general_entries = dict()
     for d_o in domain_os_flows:
+        print 'Processing', d_o, '...'
         entries = domain_os_flows[d_o]
         with open(output_folder+d_o, 'w') as of:
             of.write(json.dumps(entries, sort_keys=True, indent=4))
@@ -79,6 +83,7 @@ def main():
 
         report = '%s,%s' % (domain, platform)
         num_samples = len(entries)
+        general_total += num_samples
         report += ',%s' % num_samples
         num_positive_samples = 0
 
@@ -87,6 +92,8 @@ def main():
             label = entry[json_key_label]
             if label == 1:
                 num_positive_samples += 1
+                general_pos += 1
+            general_entries[k] = entry
         report += ',%s' %  num_positive_samples
         report += ',%s' % tk_flag
         with open(domains_stat_file, 'a+') as df:
@@ -100,8 +107,18 @@ def main():
 
         # if num_positive_samples >0:
         #     exit(0)
+    gen_repor = dict()
+    gen_repor[json_key_domain] = 'general'
+    gen_repor[json_key_platform] = 'all'
+    gen_repor['tk_flag'] = 1
+    gen_repor['num_samples'] = general_total
+    gen_repor['num_positive'] = general_pos
+    report_json['general.json'] = gen_repor
     with open(domains_stat_json, 'w') as df:
         df.write(json.dumps(report_json, sort_keys=True, indent=4))
+        
+    with open(out_general, 'w') as gf:
+        gf.write(json.dumps(general_entries, sort_keys=True, indent=4))
     print '%s domain_oses processed' % (len(domain_os_flows))
 
 
@@ -124,6 +141,7 @@ def dump_os_domains(dev_os, fpath):
                     domain_os_flows[domain_os] = dict()
 
                 domain_os_flows[domain_os][k] = entry
+
 
 
 if __name__ == '__main__':

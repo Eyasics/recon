@@ -31,7 +31,7 @@ import weka.core.converters.ArffLoader;
 public class PredictByDomainOS {
 
 	public static boolean isModelLoaded = false;
-	public static final String GENERAL_CLASSIFIER = "general";
+	public static final String GENERAL_CLASSIFIER = "general_all";
 	public static Map<String, Classifier> domainOSModel;
 	public static Map<String, Map<String, Integer>> domainOSFeature;
 	public static Map<String, Instances> domainOSStruct;
