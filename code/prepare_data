@@ -1,19 +1,22 @@
 #!/usr/bin/python
 """
 This file is part of ReCon.
+    Copyright (C) 2016  Jingjing Ren, Northeastern University.
 
-    ReCon is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
 
-    Foobar is distributed in the hope that it will be useful,
+    This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>."
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
 """
 import os
 import json
@@ -116,7 +119,7 @@ def main():
     report_json['general.json'] = gen_repor
     with open(domains_stat_json, 'w') as df:
         df.write(json.dumps(report_json, sort_keys=True, indent=4))
-        
+
     with open(out_general, 'w') as gf:
         gf.write(json.dumps(general_entries, sort_keys=True, indent=4))
     print '%s domain_oses processed' % (len(domain_os_flows))

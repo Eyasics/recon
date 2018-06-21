@@ -1,18 +1,21 @@
 /**
  * This file is part of ReCon.
+     Copyright (C) 2016  Jingjing Ren, Northeastern University.
 
-    ReCon is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     as published by the Free Software Foundation; either version 2
+     of the License, or (at your option) any later version.
 
-    Foobar is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>."
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
  */
 package meddle;
 
@@ -49,7 +52,7 @@ public class Util {
 		System.out.println(line);
 		return line;
 	}
-	
+
 	public static Map<String, String> readConfig(String filename) {
 		Map<String, String> map = new HashMap<String, String>();
 		try {
@@ -258,7 +261,7 @@ public class Util {
 			return ANDROID;
 		return OTHER_DEVICE;
 	}
-	
+
 	public static ArrayList<String> readLines(String fullPath, String commentSymbol) {
 		ArrayList<String> lines = new ArrayList<String>();
 		if(!(new File(fullPath)).exists()) return lines;
@@ -281,7 +284,7 @@ public class Util {
 		}
 		return lines;
 	}
-	
+
 	public static void writeTextToFile(String fullPath, String text){
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(fullPath));
@@ -291,7 +294,7 @@ public class Util {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void appendLineToFile(String fullPath, String line){
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(fullPath, true));
@@ -305,11 +308,11 @@ public class Util {
 	static final String IOS = "ios";
 	static final String ANDROID = "android";
 	static final String OTHER_DEVICE = "other-device";
-	
+
 	public static void loadJSONObject(String filePath){
-		
+
 	}
-	
+
 	// All below are help functions for JSONObject access
 	public static String getStringFromJSONObject(JSONObject obj, String keyName) {
 		return (String) obj.get(keyName);
@@ -318,7 +321,7 @@ public class Util {
 	public static int getIntFromJSONObject(JSONObject obj, String keyName) {
 		return (int) (long) obj.get(keyName);
 	}
-	
+
 	public static double getDoubleFromJSONObject(JSONObject obj, String keyName) {
 		return (double) obj.get(keyName);
 	}

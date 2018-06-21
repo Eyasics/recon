@@ -1,18 +1,21 @@
 /**
  * This file is part of ReCon.
+     Copyright (C) 2016  Jingjing Ren, Northeastern University.
 
-    ReCon is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     as published by the Free Software Foundation; either version 2
+     of the License, or (at your option) any later version.
 
-    Foobar is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>."
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
  */
 package meddle;
 
@@ -59,7 +62,7 @@ public class TrainModelByDomainOS {
 	/**
 	 * Load all labelled network flows from JSON files and train classifiers for
 	 * each domain_os.
-	 * 
+	 *
 	 * @param classifierName
 	 *            - support for J48, SGD, ...TODO: LIST ALL THAT SUPPORTED
 	 */
@@ -78,13 +81,13 @@ public class TrainModelByDomainOS {
 				if (fileName.equals("general.json")){
 					System.out.println("Training general, usually takes 30 mins...");
 				}
-				
+
 				JSONObject info = (JSONObject) domain_os_reports.get(k);
 				int tk_flag = Util.getIntFromJSONObject(info, TK_FLAG);
 				int num_pos = Util.getIntFromJSONObject(info, NUM_POSITIVE);
 				Info inf = new Info();
 				inf.domain = Util.getStringFromJSONObject(info, DOMAIN);
-				
+
 				inf.OS = Util.getStringFromJSONObject(info, PLATFORM);
 				inf.domainOS = inf.domain + "_" + inf.OS;
 				inf.initNumPos = Util.getIntFromJSONObject(info, NUM_POSITIVE);
@@ -100,17 +103,17 @@ public class TrainModelByDomainOS {
 					numTrained ++;
 				}
 			}
-			
+
 			System.out.println(numTrained + " <domain,os> trained.");
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}
 
 	}
-	
+
 	/**
 	 * Train a classifier given the name of a tracker domain
-	 * 
+	 *
 	 * @param jsonDataPathRelative
 	 *            - e.g. aax-us-east.amazon-adsystem.com_android.json
 	 * @param classifierName
@@ -262,11 +265,11 @@ public class TrainModelByDomainOS {
 		}
 		return trainingData;
 	}
-	
+
 	/**
 	 * Give the number of positive samples and the number of negative samples,
 	 * find out the balancing values for both parties.
-	 * 
+	 *
 	 * @param numFold
 	 *            number of folder in evaluation, by default, is 10
 	 */
@@ -314,7 +317,7 @@ public class TrainModelByDomainOS {
 	/**
 	 * Given positive lines and negative lines, generate the overall word_count
 	 * and trainMatrix.
-	 * 
+	 *
 	 * @param plines
 	 *            - ArrayList of lines in positive samples
 	 * @param nlines
@@ -463,7 +466,7 @@ public class TrainModelByDomainOS {
 			}
 			classifier.buildClassifier(trainingSet);
 			long t2 = System.nanoTime();
-			
+
 
 			double trainingTime = (t2 - t1) / 10e8;
 
@@ -488,7 +491,7 @@ public class TrainModelByDomainOS {
 
 	/**
 	 * Given the classifierName, return a classifier
-	 * 
+	 *
 	 * @param classifierName
 	 *            e.g. J48, Bagging etc.
 	 */
@@ -533,7 +536,7 @@ public class TrainModelByDomainOS {
 	/**
 	 * Do evalution on trained classifier/model, including the summary, false
 	 * positive/negative rate, AUC, running time
-	 * 
+	 *
 	 * @param j48
 	 *            - the trained classifier
 	 * @param domain
@@ -569,13 +572,13 @@ public class TrainModelByDomainOS {
 
 	/**
 	 * Given a classifier model, print out the tree graph and its html report.
-	 * 
+	 *
 	 * @param j48
 	 *            - the classifier model
 	 * @param domainOS
 	 *            - domain,os name
 	 * @param mem
-	 * 			  - the measurement results           
+	 * 			  - the measurement results
 	 * */
 	public static void doGraphicOutput(J48 j48, String domainOS, MetaEvaluationMeasures mem) {
 		try {
@@ -591,8 +594,8 @@ public class TrainModelByDomainOS {
 			sum += "AUC: " + mem.AUC + "<br/> \n";
 			sum += "False Positive Rate: " + mem.falsePositiveRate + "<br/> \n";
 			sum += "False Negative Rate: " + mem.falseNegativeRate + "<br/> <br/> \n";
-			
-			
+
+
 			sum += "Initial Number of Samples: " + mem.info.initNumTotal + "<br/>\n";
 			sum += "Initial Number of Positive: " + mem.info.initNumPos + "<br/>\n";
 			sum += "Initial Number of Negative: " + mem.info.initNumNeg + "<br/><br/>\n";
@@ -600,14 +603,14 @@ public class TrainModelByDomainOS {
 			sum += "Trained Number of Samples: " + mem.numTotal + "<br/>\n";
 			sum += "Trained Number of Positive: " + mem.numPositive + "<br/>\n";
 			sum += "Trained Number of Negative: " + mem.numNegative + "<br/></br/>\n";
-			
 
-			
+
+
 			sum += "<img src='" + domainOS + ".png'/><br/> <br/> \n";
 			sum += j48.toString().replace("\n", "<br/>");
 			sum += "Number of Rules: " + j48.measureNumRules() + "<br/>\n";
 			sum += "<a href='../domain_os/"+ mem.info.fileNameRelative + "'>training data</a>";
-			
+
 			sum = "<html><body>" + sum;
 			sum += "</body></html>";
 			String cmd = RConfig.DOT_PATH + " -o " + png + " " + on + " -Tpng";
@@ -686,9 +689,9 @@ class TrainingData {
 	public ArrayList<Map<String, Integer>> trainMatrix;
 	public ArrayList<Integer> piiLabels;
 	public Instances trainingInstances;
-	
+
 	public MetaEvaluationMeasures mem;
-	
+
 	public TrainingData(){
 		wordCount = new HashMap<String, Integer>();
 		trainMatrix = new ArrayList<Map<String, Integer>>();
@@ -699,14 +702,14 @@ class TrainingData {
 }
 
 /**
- * Intermediate and final results during training a classifier for the domain,os. 
+ * Intermediate and final results during training a classifier for the domain,os.
  * */
 class MetaEvaluationMeasures {
 	public double falsePositiveRate;
 	public double falseNegativeRate;
 	public double trainingTime;
 	public double populatingTime;
-	
+
 	public int numTotal;
 	public int numPositive;
 	public int numNegative;

@@ -1,18 +1,21 @@
 /**
  * This file is part of ReCon.
+     Copyright (C) 2016  Jingjing Ren, Northeastern University.
 
-    ReCon is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     as published by the Free Software Foundation; either version 2
+     of the License, or (at your option) any later version.
 
-    Foobar is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>."
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
  */
 package meddle;
 
@@ -49,12 +52,12 @@ public class RString {
 	/**
 	 * Seprate a line of string into separated words. This function could not
 	 * run as a parallel function.
-	 * 
+	 *
 	 * @param filename
 	 *            name of original flow, for later recovery
 	 * @param line
 	 * @return A list of words appearing in the line and their frequency.
-	 * 
+	 *
 	 */
 	public ArrayList<String> breakLineIntoWords(String line) {
 		String delimiters = DELIMITERS;
@@ -151,7 +154,7 @@ public class RString {
 		}
 		niceLine = niceLine.trim();
 		// Word and NiceLine
-		
+
 		for (String t : termXML) {
 			termList.add(t);
 			niceLine+=t+"\t";
@@ -296,7 +299,7 @@ public class RString {
 		}
 		return isFormatGood;
 	}
-	
+
 	/** format validation for idfa */
 	public static boolean isIDFA(String reconValue) {
 		int len = reconValue.length();
@@ -466,10 +469,10 @@ public class RString {
 //		}
 //		return isEntryExist;
 //	}
-	
+
 
 	/**
-	 * 
+	 *
 	 * userLabel 1 is correct(positive), 0 is incorrect(negative)
 	 * */
 //	public static boolean isKeyAlwaysIncorrect(String reconKey, int userID) {
@@ -496,7 +499,7 @@ public class RString {
 
 	public static boolean isStopWord(String key) {
 		// called by
-		
+
 		if (SharedMem.stopWords.containsKey(key))
 			return true;
 		return false;

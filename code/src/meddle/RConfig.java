@@ -1,18 +1,21 @@
 /**
  * This file is part of ReCon.
+     Copyright (C) 2016  Jingjing Ren, Northeastern University.
 
-    ReCon is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     as published by the Free Software Foundation; either version 2
+     of the License, or (at your option) any later version.
 
-    Foobar is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>."
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
  */
 package meddle;
 
@@ -29,11 +32,11 @@ public class RConfig {
 	public static String indexDefJSON = "data/index_dat.json";
 	public static String domainOSKeysFile = "config/domainOSKeys.json";
 	public static String wildKeysFile = "config/wildKeys.json";
-	
+
 	public static boolean enableCrossValidation = true;
 	public static boolean enableGraphicOutput = false;
 	public static boolean enableDB = false;
-	
+
 	public static String DOT_PATH = "/usr/local/bin/dot";
 	// =========end of new definition as of May 5, 2016=====================
 	public static boolean isConfigLoaded = false;
@@ -79,7 +82,7 @@ public class RConfig {
 	public static String wekaRoot;
 	public static String trackersFile;
 	public static String dataLogs;
-	public static String IOS_PREFIX = "10.11.4."; // 
+	public static String IOS_PREFIX = "10.11.4."; //
 	public static String ANDROID_PREFIX = "10.11.3.";
 	public static String stopwordConfig;
 	public static String fullirbusersConfig;
@@ -87,7 +90,7 @@ public class RConfig {
 	public static String orgUpdateConfig;
 	static final String delimiters = "\\r\\n\\t\\\\/ ?!,=&()[]{}\"\';*+|";
 	static String dbPswd = "M3ddling";
-	
+
 	public static void loadConfig(String CONFIG) {
 		configs = Util.readConfig(CONFIG);
 		// INT
@@ -148,8 +151,8 @@ public class RConfig {
 		fullirbusersConfig = wekaRoot + getStringFromConfig("fullirbusersConfig");
 		logsDecrypted = wekaRoot + getStringFromConfig("logsDecrypted");
 		orgUpdateConfig = wekaRoot + getStringFromConfig("orgUpdateConfig");
-		
-		
+
+
 		IOS_PREFIX = getStringFromConfig("IOS_PREFIX");
 		ANDROID_PREFIX = getStringFromConfig("ANDROID_PREFIX");
 		dbPswd = getStringFromConfig("dbPassword");
